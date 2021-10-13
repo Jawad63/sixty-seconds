@@ -2,10 +2,9 @@ import './App.css';
 import Header from './components/Header/Header.js';
 
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <h1>Sixty Seconds</h1>
 
       {/* List of Components to make: */}
       
