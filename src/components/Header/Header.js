@@ -2,17 +2,27 @@ import React from 'react';
 import "../Header/header.css"
 import PersonIcon from '@mui/icons-material/Person';
 import MessageIcon from '@mui/icons-material/Message';
-import AppleIcon from '@mui/icons-material/Apple';
+import  IconButton  from '@mui/material/IconButton';
 
 
-const Header = () => {
+function Header() {
    return (
       <div className="header">
-         <PersonIcon />
-         <h1 className="header__logo">
+
+         <IconButton>
+            <PersonIcon className="header__icon" fontSize="large" />
+         </IconButton>
+         
+
+         {/* Here goes logo img: keep the class same. */}
+         <div className="header__logo">
             <span>S</span>ixty <span>S</span>econds
-         </h1>
-         <MessageIcon />
+         </div>
+
+         <IconButton>
+            <MessageIcon className="header__icon" fontSize="large"/>
+         </IconButton>
+
       </div>
    )
 }

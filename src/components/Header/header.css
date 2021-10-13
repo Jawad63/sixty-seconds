@@ -3,18 +3,32 @@
    justify-content: space-between; 
    border-bottom: 2px solid salmon;
    padding: 1rem;
+   align-items: center;
 }
 
 .header__logo {
-   color: salmon;
-   font-style: oblique;
+   color: palevioletred;
    font-weight: 500;
+   font-size: 40px;
+  /* object-fit: contain; */
+  /* height: 50px; */
+}
+
+.header__icon {
+   padding: 8px;
+   color: palevioletred;
+   border: 2px solid salmon;
+   border-radius: 50px;
+}
+
+.header__icon:hover {
+   color: white;
+   background-color: salmon;
 }
 
 span {
-   color: palevioletred;
+   color: salmon;
    text-transform: uppercase;
    font-size: 50px;
-   font-weight: 400;
-
+   font-weight: 500;
 }
