@@ -44,9 +44,6 @@ function App() {
       </Router>
 
 
-
-
-
         {/* Buttons at the bottom */}
 
         {/* Chat screen */}
