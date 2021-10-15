@@ -1,0 +1,24 @@
+.swipeButtons {
+   color: salmon;
+   position: fixed;
+   bottom: 10vh;
+   width: 100%;
+   display: flex;
+   justify-content: space-evenly;
+}
+
+.swipeButtons__repeat {
+   padding: 3vw !important;
+}
+
+.btn {
+   border-radius: 50%;
+   border: 2px solid palevioletred;
+   padding: 0.5rem;
+}
+
+.btn:hover {
+   color: white;
+   background-color: palevioletred;
+}
+

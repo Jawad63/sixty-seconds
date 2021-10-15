@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header/Header';
 import Cards from './components/Cards/Cards';
+import Swipebutton from './components/SwipeButton/Swipebutton.js';
 // import Chat from './components/Chat/Chat.js';
 import './App.css';
 import {
@@ -28,13 +29,19 @@ function App() {
           {/* Cards */}
           <Route path="/">
             <Cards />
+
+            {/* Swipe Buttons */}
+            <Swipebutton />
           </Route>
 
-        {/* 
+          
+
+
+          {/* 
           <Route path="/chat">
             <Chat />
           </Route>
-        */}
+          */}
 
           <Route path="/">
             <h1>This is homepage</h1>
