@@ -33,8 +33,7 @@ function ProfileCards() {
                <TinderCard
                   className="swipe"
                   key={person.name}
-                  // (1): By giving it a key it allows React to efficiently 
-                     // re-render a LIST.
+                  // (1): By giving it a key it allows React to efficiently re-render a LIST.
                   // (2): It makes your app super fast.
 
                   preventSwipe= {['up', 'down']}

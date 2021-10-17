@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './components/Header/Header';
-import Cards from './components/Cards/Cards';
+import Header from './components/Header/Header.js';
+import Cards from './components/Cards/Cards.js';
 import Swipebutton from './components/SwipeButton/Swipebutton.js';
-// import Chat from './components/Chat/Chat.js';
+import Profile from './components/Profile/Profile.js'
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -22,8 +22,9 @@ function App() {
       <Router>
         <Switch>
 
+          {/* Profile */}
           <Route path="/profile">
-            <h1>This is profile page</h1>
+            <Profile />
           </Route>
 
           {/* Cards */}
@@ -34,7 +35,6 @@ function App() {
             <Swipebutton />
           </Route>
 
-          
 
 
           {/* 
@@ -53,7 +53,7 @@ function App() {
 
         {/* Buttons at the bottom */}
 
-        {/* Chat screen */}
+        {/* Chat */}
 
 
     </div>
