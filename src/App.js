@@ -18,19 +18,19 @@ function App() {
     <div className="App">
 
       <Router>
-
-        {/* Header */}
-        <Header />
-
         <Switch>
 
           {/* Chat */}
           <Route path="/chat">
+            {/* Header */}
+            <Header backButton="/" />
             <Chat />
           </Route>
 
           {/* Cards & buttons */}
           <Route path="/">
+            {/* Header */}
+            <Header />
             <Cards />
             <Swipebutton />
           </Route>
