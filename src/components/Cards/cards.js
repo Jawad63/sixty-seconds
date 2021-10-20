@@ -25,6 +25,7 @@ function ProfileCards() {
    }, []);
 
    return (
+
       <div>
          <h1>"Help Others, Make difference"</h1>
 
@@ -44,10 +45,12 @@ function ProfileCards() {
                   >
                      <h3 className="name">{person.name}</h3>    
                   </div>
+
                </TinderCard>
             ))}
          </div> 
       </div>
+      
    );
 }
 
