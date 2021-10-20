@@ -29,6 +29,8 @@ function App() {
 
           {/* Cards */}
           <Route path="/">
+            <h1>Messenger Page</h1>
+          </Route>
             <Cards />
 
             {/* Swipe Buttons */}
