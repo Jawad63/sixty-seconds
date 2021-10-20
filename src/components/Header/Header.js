@@ -1,8 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "../Header/header.css"
 import PersonIcon from '@mui/icons-material/Person';
 import MessageIcon from '@mui/icons-material/Message';
-import  IconButton  from '@mui/material/IconButton';
+import IconButton from '@mui/material/IconButton';
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+
 
 
 function Header() {
@@ -15,13 +18,15 @@ function Header() {
          
 
          {/* Here goes logo img: keep the class same. */}
-         <div className="header__logo">
-            <span>S</span>ixty <span>S</span>econds
-         </div>
+         <Link to="/">
+            <MonetizationOnIcon className="header__icon" fontSize="large"/>
+         </Link>
 
-         <IconButton>
-            <MessageIcon className="header__icon" fontSize="large"/>
-         </IconButton>
+         <Link to="/chat" className="link">
+            <IconButton>
+               <MessageIcon className="header__icon" fontSize="large"/>
+            </IconButton>
+         </Link>
 
       </div>
    )

@@ -2,7 +2,8 @@ import React from 'react';
 import Header from './components/Header/Header.js';
 import Cards from './components/Cards/Cards.js';
 import Swipebutton from './components/SwipeButton/Swipebutton.js';
-import Profile from './components/Profile/Profile.js'
+import Profile from './components/Profile/Profile.js';
+import Chat from './components/Chat/Chat';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -16,37 +17,22 @@ function App() {
   return (
     <div className="App">
 
-      {/* Header */}
-      <Header />
-
       <Router>
+
+        {/* Header */}
+        <Header />
+
         <Switch>
 
-          {/* Profile */}
-          <Route path="/profile">
-            <Profile />
-          </Route>
-
-          {/* Cards */}
-          <Route path="/">
-            <h1>Messenger Page</h1>
-          </Route>
-            <Cards />
-
-            {/* Swipe Buttons */}
-            <Swipebutton />
-          </Route>
-
-
-
-          {/* 
+          {/* Chat */}
           <Route path="/chat">
             <Chat />
           </Route>
-          */}
 
+          {/* Cards & buttons */}
           <Route path="/">
-            <h1>This is homepage</h1>
+            <Cards />
+            <Swipebutton />
           </Route>
 
         </Switch>
