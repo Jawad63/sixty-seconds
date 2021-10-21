@@ -1,0 +1,13 @@
+.dm {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 2rem;
+   height: 70px;
+   border-bottom: 1px solid salmon;
+}
+
+.dm__details {
+   flex: 1;
+   padding: 1rem;
+}

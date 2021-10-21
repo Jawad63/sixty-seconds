@@ -27,6 +27,13 @@ function App() {
             <Chat />
           </Route>
 
+          {/* Profile */}
+          <Route path="/profile">
+            {/* Header */}
+            <Header backButton="/" />
+            <Profile />
+          </Route>
+
           {/* Cards & buttons */}
           <Route path="/">
             {/* Header */}

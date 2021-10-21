@@ -21,10 +21,12 @@ function Header({ backButton }) {
                <ArrowBackIcon className="header__icon" fontSize="large" />
             </IconButton>   
          ) : (
-               
-         <IconButton>
-            <PersonIcon className="header__icon" fontSize="large" />
-         </IconButton>
+         
+         <Link to="/profile">       
+            <IconButton>
+               <PersonIcon className="header__icon" fontSize="large" />
+            </IconButton>
+         </Link>
                
          )}
          
