@@ -9,20 +9,18 @@ function ProfileCards() {
    // useState: people is the variable array and the function is setPeople:
    const [people, setPeople] = useState([]);
 
+
    // useEffect is a piece of code that runs based on a condition:
    useEffect(() => {
-      const unsubscribe = database
+
+         database
          .collection("people")
          .onSnapshot((snapshot) =>
-            setPeople(snapshot.docs.map((doc) => doc.data()))
+         setPeople(snapshot.docs.map((doc) => doc.data()))
       );
 
-      return () => {
-         // this is the clean up...
-         unsubscribe();
-      }
-
    }, []);
+   
 
    return (
 
@@ -30,6 +28,7 @@ function ProfileCards() {
          <h1>"Help Others, Make difference"</h1>
 
          <div className="tinderCards__cardContainer">
+
             {people.map(person => (
                <TinderCard
                   className="swipe"
@@ -40,7 +39,7 @@ function ProfileCards() {
                   preventSwipe= {['up', 'down']}
                >
                   <div
-                     style={{ backgroundImage: `url(${people.url})`}}
+                     style={{ backgroundImage: `url(${person.url})`}}
                      className="card"
                   >
                      <h3 className="name">{person.name}</h3>    
@@ -48,6 +47,7 @@ function ProfileCards() {
 
                </TinderCard>
             ))}
+
          </div> 
       </div>
       

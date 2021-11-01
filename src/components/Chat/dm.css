@@ -2,12 +2,28 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   padding: 2rem;
+   padding: 1.5rem;
    height: 70px;
    border-bottom: 1px solid salmon;
 }
 
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+.dm__image {
+   margin-right: 20px ;
+}
+
 .dm__details {
    flex: 1;
-   padding: 1rem;
+}
+
+.dm__details > p {
+   color: gray;
+}
+
+.dm__timestamp {
+   color: lightsalmon;
 }
