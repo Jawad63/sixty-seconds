@@ -6,25 +6,25 @@ function ChatScreen() {
    const [input, setInput] = useState('');
    const [messages, setMessages] = useState([
       {
-         name: 'Garry',
+         name: 'Alina',
          image: '...',
-         message: 'yo how are you man !'
+         message: 'Heyy!'
       },
 
       {
          image: '...',
-         message: 'good, how are you?'
+         message: 'Hello :)'
       },
 
       {
-         name: 'Garry',
+         name: 'Alina',
          image: '...',
-         message: 'Good bro, what do you think about the video?'
+         message: 'Just saw your video. I would like to donate €20 to your cause!'
       },
 
       {
          image: '...',
-         message: 'nope!'
+         message: 'Thank you so much!!'
       }
 
    ]);

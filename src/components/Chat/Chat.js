@@ -9,32 +9,18 @@ function Chat() {
          <h1>Send a message :)</h1>
 
          <Dm
-            name="Garry"
-            message="yo how are you man !"
-            timestamp="40 seconds ago"
-            profilePic="..."
-         />
-
-         <Dm
-            name="Jason"
-            message="give me your money"
-            timestamp="20 minutes ago"
-            profilePic="..."
-         />
-
-         <Dm
             name="Kenny"
-            message="nice video"
+            message="Just saw your video. I would like to donate €20 to your cause!"
             timestamp="1 hour ago"
-            profilePic="..."
+            profilePic="https://www.incimages.com/uploaded_files/image/1920x1080/getty_481292845_77896.jpg"
          />
 
 
          <Dm
             name="Alina"
-            message="nope!"
-            timestamp="50 minutes ago"
-            profilePic="..."
+            message="Heyy!"
+            timestamp="30 minutes ago"
+            profilePic="https://www.g20.org/wp-content/uploads/2021/01/people.jpg"
          />
 
       </div>

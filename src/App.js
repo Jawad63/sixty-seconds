@@ -3,6 +3,7 @@ import Header from './components/Header/Header.js';
 import Cards from './components/Cards/Cards.js';
 import Swipebutton from './components/SwipeButton/Swipebutton.js';
 import Profile from './components/Profile/Profile.js';
+import UpdateProfile from './components/Profile/UpdateProfile.js';
 import Chat from './components/Chat/Chat.js';
 import ChatScreen from './components/Chat/ChatScreen.js'
 import './App.css';
@@ -39,6 +40,13 @@ function App() {
             {/* Header */}
             <Header backButton="/" />
             <Profile />
+          </Route>
+
+          {/* Update-Profile */}
+          <Route path="/update">
+            {/* Header */}
+            <Header backButton="/" />
+            <UpdateProfile />
           </Route>
 
           {/* Cards & buttons */}

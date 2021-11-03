@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import './profile.css';
 import database from '../../firebase';
+import { Link } from "react-router-dom";
 
 function Profile() {
 
@@ -21,7 +22,14 @@ function Profile() {
    return (
       <div>
 
-         <h1>My Profile</h1>
+         <div className="profile__header">
+            <h1>My Profile</h1>
+
+         <Link to={`/update/`}>
+            <h3 className="update">Update Profile</h3>
+         </Link>
+
+         </div>
 
          <div className="profile__container">
 
@@ -41,10 +49,9 @@ function Profile() {
                      <h3 className="discription__line">Age: {feed.age} years old</h3>    
                      <h3 className="discription__line">Gender: {feed.gender}</h3>
                      <h3 className="discription__line">Status: {feed.status}</h3>
-                     <h3 className="discription__line">Goal: {feed.goal}</h3>    
-                     <h3 className="discription__line">Up Votes: {feed.upVotes}</h3>
-                     <h3 className="discription__line">Down Votes: {feed.downVotes}</h3> 
-
+                     <h3 className="discription__line">Goal: {feed.goal}</h3>
+                     <h3 className="discription__line">Donation: {feed.donation}</h3>
+                     
                   </div>
                </>
             ))}

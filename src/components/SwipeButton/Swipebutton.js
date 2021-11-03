@@ -4,17 +4,13 @@ import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import './swipebutton.css';
 
 const Swipebutton = () => {
-
-
+   
    return (
       <div className="swipeButtons">
          <ThumbDownIcon className="btn" fontSize="large" />
          <ThumbUpIcon className="btn" fontSize="large" />
       </div>
    );
-
-     
-
 
 };
 
