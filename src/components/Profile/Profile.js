@@ -1,22 +1,25 @@
 import React, {useState, useEffect} from "react";
 import './profile.css';
-import database from '../../firebase';
+import { database } from '../../firebase';
+import {
+   collection,
+   getDocs
+} from 'firebase/firestore'
 import { Link } from "react-router-dom";
 
 function Profile() {
 
    const [profile, setProfile] = useState([]);
+   const userCollectionRef = collection(database, "profile");
 
-      useEffect(() => {
+   useEffect(() => {
+      const getProfileInfo = async () => {
+         const data = await getDocs(userCollectionRef);
+         setProfile(data.docs.map((doc) => ({...doc.data()})))
+      };
 
-         database
-         .collection("profile")
-         .onSnapshot((snapshot) =>
-         setProfile(snapshot.docs.map((doc) => doc.data()))
-
-         );
-
-      }, []);
+      getProfileInfo();
+   }, [])
 
  
    return (

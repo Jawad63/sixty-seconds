@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './updateProfile.css';
-
-import database, { getDocs } from '../../firebase'
+import { database } from '../../firebase'
+import {
+   collection,
+   getDocs
+} from 'firebase/firestore'
 
 
 
@@ -18,27 +21,17 @@ function UpdateProfile() {
 
    // Here comes the already exisiting data from your profile which you can edit: 
    const [user, setUser] = useState([]);
-
-
-
-   /* 
-   // This will help us display the data that already exists in our DB:
-   useEffect (() => {
-      onSnapshot(collection(db, "profile"), (snapshot) => {
-         console.log(snapshot.docs)
-      });
-   })
-   */
-
+   const userCollectionRef = collection(database, "profile");
 
    useEffect(() => {
-         database
-         .collection("profile")
-         .onSnapshot((snapshot) =>
-         setUser(snapshot.docs.map((doc) => doc.data()))
-      );
+      const getProfileInfo = async () => {
+         const data = await getDocs(userCollectionRef);
+         setUser(data.docs.map((doc) => ({...doc.data()})))
+      };
 
-   }, []);
+      getProfileInfo();
+   }, [])
+
 
 
    return (
