@@ -22,7 +22,7 @@ function Header({ backButton }) {
             </IconButton>   
          ) : (
          
-         <Link to="/profile">       
+         <Link to="/profileSection">       
             <IconButton>
                <PersonIcon className="header__icon" fontSize="large" />
             </IconButton>

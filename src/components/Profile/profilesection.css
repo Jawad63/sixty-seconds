@@ -1,0 +1,16 @@
+.profile__heading {
+   display: flex;
+   justify-content: space-between;
+   padding: 5% 20% 0 17%;
+   color: salmon;
+   font-size: 25px;
+
+}
+
+.profile__Section {
+   display: flex;
+   justify-content: space-between; 
+   border-bottom: 2px solid salmon;
+   padding: 1rem;
+   align-items: center;
+}

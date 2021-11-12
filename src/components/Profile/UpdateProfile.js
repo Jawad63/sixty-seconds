@@ -74,7 +74,7 @@ function UpdateProfile() {
       await updateDoc(userDoc, newData)
    };
 
-   // To delete User: DO NOT CLICK ON DELETE THOO!!!
+   // To delete User: DO NOT CLICK ON DELETE THOO
    const deleteUser = async (id) => {
       const deleteUserDoc = doc(database, "profile", id);
       await deleteDoc(deleteUserDoc);
