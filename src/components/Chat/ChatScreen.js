@@ -7,23 +7,23 @@ function ChatScreen() {
    const [messages, setMessages] = useState([
       {
          name: 'Alina',
-         image: '...',
+         image: 'https://image.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg',
          message: 'Heyy!'
       },
 
       {
-         image: '...',
+         image: 'https://img.24baby.nl/2021/01/b5b79efa-vruchtbaarheid-man.jpg',
          message: 'Hello :)'
       },
 
       {
          name: 'Alina',
-         image: '...',
+         image: 'https://image.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg',
          message: 'Just saw your video. I would like to donate €20 to your cause!'
       },
 
       {
-         image: '...',
+         image: 'https://img.24baby.nl/2021/01/b5b79efa-vruchtbaarheid-man.jpg',
          message: 'Thank you so much!!'
       }
 
