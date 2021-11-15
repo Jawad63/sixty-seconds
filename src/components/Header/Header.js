@@ -36,7 +36,7 @@ function Header({ backButton }) {
             <MonetizationOnIcon className="header__icon" fontSize="large"/>
          </Link>
 
-         <Link to="/chat" className="link">
+         <Link to="/inbox" className="link">
             <IconButton>
                <MessageIcon className="header__icon" fontSize="large"/>
             </IconButton>

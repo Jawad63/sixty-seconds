@@ -1,9 +1,8 @@
 import React from 'react'
 import Dm from './Dm'
-import './chat.css'
 
 
-function Chat() {
+function Inbox() {
    return (
       <div className="chat">
          <h1>Send a message :)</h1>
@@ -27,4 +26,4 @@ function Chat() {
    )
 }
 
-export default Chat
+export default Inbox

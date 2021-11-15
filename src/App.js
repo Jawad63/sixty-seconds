@@ -2,8 +2,9 @@ import React from 'react';
 import Header from './components/Header/Header.js';
 import Cards from './components/Cards/Cards.js';
 import Profile from './components/Profile/Profile.js';
+import Inbox from './components/Chat/Inbox.js';
 import UpdateProfile from './components/Profile/UpdateProfile.js';
-import Chat from './components/Chat/Chat.js';
+import Dm from './components/Chat/Dm.js';
 import ChatScreen from './components/Chat/ChatScreen.js'
 import './App.css';
 import {
@@ -20,18 +21,18 @@ function App() {
       <Router>
         <Switch>
 
-          {/* DM */}
-          <Route path="/chatscreen/:person">
+          {/* ChatScreen */}
+          <Route path="/chatscreen/">
             {/* Chat */}
-            <Header backButton="/chat" />
+            <Header backButton="/inbox"/>
             <ChatScreen />
           </Route>
 
-          {/* Chat */}
-          <Route path="/chat">
+          {/* DM/Inbox */}
+          <Route path="/inbox">
             {/* Header */}
             <Header backButton="/" />
-            <Chat />
+            <Inbox />
           </Route>
 
           {/* Profile */}
