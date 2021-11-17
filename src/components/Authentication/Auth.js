@@ -1,17 +1,17 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { signup } from '../../firebase';
 
 
 function Auth() {
+   const emailRef = useRef();
+   const passwordRef = useRef();
 
-   function handleSignUp() {
-      
+   async function handleSignUp() {
+      await signup(
+         emailRef.current.value,
+         passwordRef.current.value
+      );
    }
-
-
-
-
-
 
 
    return (
@@ -19,8 +19,8 @@ function Auth() {
          <h1>Login :)</h1>
 
          <div id="fields">
-            <input placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input ref={emailRef} placeholder="Email" />
+            <input ref={passwordRef} type="password" placeholder="Password" />
          </div>
 
          <button onClick={handleSignUp}>Sign Up</button>
