@@ -1,7 +1,12 @@
+import { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 import "firebase/auth";
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged
+} from 'firebase/auth'
 
 const firebaseConfig = {
    apiKey: "AIzaSyBiVMWwpf3XWVrIMMuV7_Lip2gBFNASdZc",
@@ -23,6 +28,16 @@ export function signup(email, password) {
   return createUserWithEmailAndPassword(auth, email, password);
 }
 
+// Custom Hook: 
+export function useAuth() {
+  const [currentUser, setCurrentUser] = useState();
 
+  useEffect(() => {
+    const unsub =  onAuthStateChanged(auth, user => setCurrentUser(user));
+    return unsub;
+  }, [])
+
+  return currentUser;
+}
 
 export { database };
