@@ -7,12 +7,16 @@ function Auth() {
    const passwordRef = useRef();
 
    async function handleSignUp() {
-      await signup(
-         emailRef.current.value,
-         passwordRef.current.value
-      );
-   }
+      try {
+         await signup(
+            emailRef.current.value,
+            passwordRef.current.value
+         );
+      } catch {
+         alert("This email is already registered!")
+      }
 
+   }
 
    return (
       <div id="main">
@@ -24,7 +28,6 @@ function Auth() {
          </div>
 
          <button onClick={handleSignUp}>Sign Up</button>
-
       </div>
    )
 }
