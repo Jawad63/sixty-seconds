@@ -49,18 +49,16 @@ function App() {
             <UpdateProfile />
           </Route>
 
-          {/* Login  */}
-          <Route path="/login">
-            {/* Header */}
-            <Header />
-            <Auth />
-          </Route>
-
           {/* Cards */}
-          <Route path="/">
+          <Route path="/Cards">
             {/* Header */}
             <Header />
             <Cards />
+          </Route>
+
+          {/* Login  */}
+          <Route path="/">
+            <Auth />
           </Route>
 
 

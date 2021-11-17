@@ -5,7 +5,9 @@ import "firebase/auth";
 import {
   getAuth,
   createUserWithEmailAndPassword,
-  onAuthStateChanged
+  onAuthStateChanged,
+  signOut,
+  signInWithEmailAndPassword
 } from 'firebase/auth'
 
 const firebaseConfig = {
@@ -23,9 +25,19 @@ const app = initializeApp(firebaseConfig);
 const database = getFirestore(app);
 const auth = getAuth();
 
-
+// Sign Up:
 export function signup(email, password) {
   return createUserWithEmailAndPassword(auth, email, password);
+}
+
+// Log In:
+export function login(email, password) {
+  return signInWithEmailAndPassword(auth, email, password);
+}
+
+// Log Out: 
+export function logout() {
+  return signOut(auth);
 }
 
 // Custom Hook: 
