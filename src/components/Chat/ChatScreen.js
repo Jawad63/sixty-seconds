@@ -39,6 +39,7 @@ function ChatScreen() {
    return (
       <div className="chatScreen">
          {messages.map((info) => (
+
             info.name ? (
                <div className="chatScreen__message">
                <Avatar

@@ -4,8 +4,8 @@ import Cards from './components/Cards/Cards.js';
 import Profile from './components/Profile/Profile.js';
 import Inbox from './components/Chat/Inbox.js';
 import UpdateProfile from './components/Profile/UpdateProfile.js';
-import Dm from './components/Chat/Dm.js';
-import ChatScreen from './components/Chat/ChatScreen.js'
+import ChatScreen from './components/Chat/ChatScreen.js';
+import Auth from './components/Authentication/Auth.js';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -49,12 +49,20 @@ function App() {
             <UpdateProfile />
           </Route>
 
-          {/* Cards & buttons */}
+          {/* Login  */}
+          <Route path="/login">
+            {/* Header */}
+            <Header />
+            <Auth />
+          </Route>
+
+          {/* Cards */}
           <Route path="/">
             {/* Header */}
             <Header />
             <Cards />
           </Route>
+
 
         </Switch>
       </Router>
