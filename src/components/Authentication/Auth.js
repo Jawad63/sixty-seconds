@@ -1,96 +1,129 @@
-import React, { useRef, useState } from 'react'
-import { signup, login, logout, useAuth } from '../../firebase';
-import './auth.css';
+import React, { useState, useEffect } from 'react';
+import Login from './Login';
+import Cards from '../Cards/Cards.js'
+import { database } from '../../firebase'
+import {
+   getAuth,
+   createUserWithEmailAndPassword,
+   signInWithEmailAndPassword,
+   onAuthStateChanged,
 
+} from 'firebase/auth';
 
 function Auth() {
-   const [loading, setLoading] = useState(false);
-   const currentUser = useAuth();
 
-   const emailRef = useRef();
-   const passwordRef = useRef();
+   const [user, setUser] = useState('');
+   const [email, setEmail] = useState('');
+   const [password, setPassword] = useState('');
+   const [emailError, setEmailError] = useState('');
+   const [passwordError, setPasswordError] = useState('');
+   const [hasAccount, setHasAccount] = useState(false);
+
+   const auth = getAuth();
+
+   const clearInputs = () => {
+      setEmail('');
+      setPassword('');
+   }
+
+   const clearErrors = () => {
+      setEmailError('');
+      setPasswordError('');
+   } 
+
+   // LOGIN:
+   const handleLogin = () => {
+      clearErrors();
+
+      signInWithEmailAndPassword(auth, email, password)
+      .catch((err) => {
+         switch (err.code) {
+
+            case "Invalid Email":
+            case "User Disabled":
+            case "User Not Found":
+               setEmailError(err.message);
+            break;
+         
+            case "Wrong Password. Try again":
+               setPasswordError(err.message);
+            break;
+         }
+      });
+   };
 
 
-   // SignUp: --->
-   async function handleSignUp() {
-      try {
-         setLoading(true);
-         await signup(
-            emailRef.current.value,
-            passwordRef.current.value
-         );
-      }
-      catch {
-         {alert("This email is already registered!")}
-      };
-      setLoading(false);
+   //SIGNUP:
+   const handleSignup = () => {
+      clearErrors();
+
+      createUserWithEmailAndPassword(auth, email, password)
+      .catch((err) => {
+         switch (err.code) {
+
+            case "Email already in use":
+            case "auth/invalid-email":
+               setEmailError(err.message);
+            break;
+         
+            case "Password too weak or short":
+               setPasswordError(err.message);
+            break;
+         }
+      });
+   }
+
+   // LOGOUT:
+   const handleLogout = () => {
+      getAuth().signOut();
    }
 
 
-   // LogIn: --->
-   async function handleLogIn() {
-      try {
-         setLoading(true);
-         await login(
-            emailRef.current.value,
-            passwordRef.current.value
-         );
-      }
-      catch {
-         {alert("This email is already registered!")}
-      };
-      setLoading(false);
-   }
+   const authListener = () => {
+      
+      getAuth().onAuthStateChanged((user) => {
+         if (user) {
+            clearInputs();
+            setUser(user);
+         } else {
+            setUser("");
+         }
+      });
+   };
 
 
-   // LogOut: --->
-   async function handleLogOut() {
-      try {
-         setLoading(true);
-         await logout();
-      }
-      catch {
-         alert("Error!!!")
-      }
-      setLoading(false);
-   }
+   useEffect(() => {
+      authListener();
+   }, []);
 
 
 
    return (
-      <div id="main">
-         <h1>Login :)</h1>
+      
+      <div className="auth">
 
-         <div>Currently logged in as: { currentUser?.email }</div>
+         {user ? (
+            <Cards handleLogout={handleLogout} />
+         ) : (
+               
+            <Login
+               email={email}
+               setEmail={setEmail}
 
-         <div id="fields">
-            <input ref={emailRef} placeholder="Email" />
-            <input ref={passwordRef} type="password" placeholder="Password" />
-         </div>
+               password={password}
+               setPassword={setPassword}
 
-         <button className="logIn_button"
-            onClick={handleSignUp}
-            disabled={loading || currentUser}
+               handleLogin={handleLogin}
+               handleSignup={handleSignup}
 
-         >
-            SignUp
-         </button>
+               hasAccount={hasAccount}
+               setHasAccount={setHasAccount}
 
-         <button
-            className="logOut_button"
-            onClick={handleLogIn}
-            disabled={loading || currentUser}
-         >
-            LogIn
-         </button>
+               emailError={emailError}
+               passwordError={passwordError}
+            />
+         )}
 
-         <button
-            className="logOut_button"
-            onClick={handleLogOut}
-            disabled={loading || !currentUser}
-         >
-            LogOut
-         </button>
       </div>
    )
 }

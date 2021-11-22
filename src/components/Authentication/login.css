@@ -1,0 +1,47 @@
+.loginContainer {
+   text-align: center;
+   padding: 2rem;
+   border: 2px solid salmon;
+   margin: 3rem 19rem;
+   background-color: salmon;
+}
+
+.label {
+   display: grid;
+   color: salmon;
+   text-align: center;
+   color: white;
+}
+
+.field {
+
+   border: salmon;
+   text-align: center;
+}
+
+.errorMessage {
+   color: red;
+}
+
+.btnContainer {
+   padding: 2rem;
+}
+
+.button {
+   padding: 10px;
+   color: salmon;
+   background-color: white;
+   border: 2px solid salmon;
+   font-size: 17px;
+   font-weight: 600;
+   border-radius: 20px;
+}
+
+p {
+   font-size: 1.4rem;
+}
+
+.span {
+   color: white;
+   font-size: 25px;
+}

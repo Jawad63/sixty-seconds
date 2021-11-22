@@ -6,9 +6,10 @@ import {
    getDocs,
 } from 'firebase/firestore'
 import './cards.css';
+import Header from "../Header/Header";
 
 
-function ProfileCards() {
+function ProfileCards({handleLogout}) {
 
    const [person1, setPerson1] = useState([])
    
@@ -21,9 +22,19 @@ function ProfileCards() {
    );
 
 
-
    return (
       <>
+         <nav>
+            <button
+               className="button"
+               onClick={handleLogout}
+            >
+               Logout
+            </button>
+         </nav>
+
+         <Header />
+
          <h1>"Help Others, Make difference"</h1>
          <div className="cardContainer">
 

@@ -1,11 +1,11 @@
 import React from 'react';
+import Auth from './components/Authentication/Auth.js';
 import Header from './components/Header/Header.js';
 import Cards from './components/Cards/Cards.js';
 import Profile from './components/Profile/Profile.js';
 import Inbox from './components/Chat/Inbox.js';
 import UpdateProfile from './components/Profile/UpdateProfile.js';
 import ChatScreen from './components/Chat/ChatScreen.js';
-import Auth from './components/Authentication/Auth.js';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -15,7 +15,7 @@ import {
 } from "react-router-dom";
 
 function App() {
-  return (
+  return ( 
     <div className="App">
 
       <Router>
@@ -56,11 +56,10 @@ function App() {
             <Cards />
           </Route>
 
-          {/* Login  */}
+          {/* Login/Sign-up */}
           <Route path="/">
             <Auth />
           </Route>
-
 
         </Switch>
       </Router>
